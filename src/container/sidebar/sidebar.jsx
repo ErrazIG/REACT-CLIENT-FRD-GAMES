@@ -40,9 +40,9 @@ const Sidebar = () => {
                             <img className={style.sidebarIcon} src={friends} alt="" />
                             <span className={style.sidebarText}>Friends</span>
                         </Link>
-                        <Link className={style.sidebarLink} to="/messages">
+                        <Link className={style.sidebarLink} to="/chat">
                             <img className={style.sidebarIcon} src={messages} alt="" />
-                            <span className={style.sidebarText}>Messages</span>
+                            <span className={style.sidebarText}>Chat</span>
                         </Link>
                         <div className="line"></div>
                         <Link className={style.sidebarLink} to="/games">
@@ -64,15 +64,15 @@ const Sidebar = () => {
 
                 <div className={style.navChildContainer}>
                     <ul className={style.sidebarLinks}>
-                        <Link className={style.sidebarLink}>
+                        <Link className={style.sidebarLink} to="/help">
                             <img className={style.sidebarIcon} src={help} alt="" />
                             <span className={style.sidebarText}>Help</span>
                         </Link>
-                        <Link className={style.sidebarLink}>
+                        <Link className={style.sidebarLink} to="/conditions">
                             <img className={style.sidebarIcon} src={conditions} alt="" />
                             <span className={style.sidebarText}>Conditions</span>
                         </Link>
-                        <Link className={style.sidebarLink}>
+                        <Link className={style.sidebarLink} to="/confidentiality">
                             <img className={style.sidebarIcon} src={confidentiality} alt="" />
                             <span className={style.sidebarText}>Confidentiality</span>
                         </Link>

@@ -60,6 +60,27 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  color: var(--textSelection);
+  background: var(--backgroundTextSelection);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+.mainContent {
+  background: #ff040400;
+  position: relative;
+  z-index: 5;
+  top: 6em;
+  left: 15em;
+  width: calc(100dvw - 15em);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .closeNav {
   position: absolute;
   top: 2.5%;
@@ -76,14 +97,10 @@ body {
   margin: 1em auto;
 }
 
-
-/* TABLET */
-@media only screen and (min-width: 768px) {
-  /* body {} */
-}
-
-/* DESKTOP */
-@media only screen and (min-width: 1024px) {
-
-  /* body {} */
+.line-header {
+  width: 95%;
+  background: var(--text);
+  height: 1px;
+  opacity: .5;
+  margin: 1.5em auto;
 }

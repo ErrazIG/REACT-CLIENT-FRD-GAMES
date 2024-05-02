@@ -1,7 +1,19 @@
 import style from "./header-user.module.css";
-import headerUserImg from "../../assets/9910000074226_cg.jpg";
+import { useRecoilState } from 'recoil';
+import { tokenAtom } from '../../atoms/token.atom.js';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderUser = () => {
+
+    const [token, setToken] = useRecoilState(tokenAtom);
+    const navigate = useNavigate();
+
+    const handleLogout = (e) => {
+        setToken(null);
+        navigate('/');
+    }
+
+    const headerUserImg = '';
     return (
         <div className={style.headerUser}>
 
@@ -14,11 +26,14 @@ const HeaderUser = () => {
                 <p className={style.headerUserUsername}>ErrazIG</p>
             </div>
 
-            <img
-                className={style.headerUserLogout}
-                src={headerUserLogout}
-                alt="Logout icon"
-            />
+
+            <Link to="/auth/logout" onClick={handleLogout}>
+                <img
+                    className={style.headerUserLogout}
+                    src={headerUserLogout}
+                    alt="Logout icon"
+                />
+            </Link>
         </div>
     );
 };

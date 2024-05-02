@@ -1,21 +1,39 @@
 import style from "./header.module.css"
 import Searchbar from "../../components/searchbar/searchbar.jsx";
-import { BsSearch } from "react-icons/bs";
+import HeaderUser from "../../components/header-user/header-user.jsx";
+import { useRecoilValue } from 'recoil';
+import { tokenAtom } from '../../atoms/token.atom.js';
+import { Link } from "react-router-dom";
+import ThemeToggle from "../../components/theme-toggle/theme-toggle.jsx";
 
 const Header = () => {
+
+    const token = useRecoilValue(tokenAtom);
+
     return (
         <>
             <header className={style.header}>
-
                 <Searchbar />
-                {/* <div className={style.headerSearch}>
-                    <input className={style.headerSearchbar} type="text" placeholder="search..." />
-                    <button className={style.headerSearchBtn}>
-                    <BsSearch  className={style.headerSearchIcon} />
+                {!!token ? (
+                    <>
+                        <HeaderUser />
+                        <ThemeToggle />
+                    </>
+                ) : (
+                    <>
+                        <div>
+                            <Link to='/auth/login'>
+                                <button className="auth-btn">Login</button>
+                            </Link>
 
-                    </button>
-                </div> */}
-                
+                            <Link to='/auth/register'>
+                                <button className="auth-btn">Register</button>
+                            </Link>
+                        <ThemeToggle />
+                        </div>
+                    </>
+                )}
+
             </header>
         </>
     )
