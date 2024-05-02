@@ -1,0 +1,89 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/albert-sans');
+@import url('https://fonts.cdnfonts.com/css/noto-sans-ethiopic');
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root[data-theme="dark"] {
+  --text: #f3e7e2;
+  --iconsColor: invert(0);
+  --backgroundPrimary: #26201e;
+  --backgroundSecondary: #3b3634;
+  --backgroundThird: #141110;
+
+  --primary: #ff5f14;
+  --secondary: #7e3e20;
+  --accent: #d76a37;
+  --orange: rgb(242, 137, 37);
+
+  --backgroundTextSelection: #f3e7e2d7;
+  --textSelection: #26201ee7;
+
+  /* --fontPrimary: 'Albert Sans', sans-serif; */
+  --fontPrimary: 'Noto Sans Ethiopic', sans-serif;
+  --fontSecondary: 'Poppins', sans-serif;
+}
+
+:root[data-theme="light"] {
+  --text: #26201e;
+  --iconsColor: invert(1);
+  --backgroundPrimaryLight: #f5f2f0;
+  --backgroundSecondaryLight: #dedad8;
+  --backgroundThirdLight: #c8c2bf;
+  --primary: #eb4a00; /*ff5f14 */
+  --secondary: #df9f81;
+  --accent: #c85a28;
+  --orange: rgb(242, 137, 37);
+
+  --backgroundTextSelection: #26201ee7;
+  --textSelection: #f3e7e2d7;
+
+  /* --fontPrimary: 'Albert Sans', sans-serif; */
+  --fontPrimary: 'Noto Sans Ethiopic', sans-serif;
+  --fontSecondary: 'Poppins', sans-serif;
+}
+
+/* MOBILE FIRST */
+body {
+  background-color: var(--backgroundPrimary);
+  color: var(--text);
+  font-family: var(--fontPrimary);
+
+  display: flex;
+  overflow-x: hidden;
+}
+
+.closeNav {
+  position: absolute;
+  top: 2.5%;
+  right: 2.5%;
+  width: 3em;
+  height: 3em;
+}
+.line {
+
+  width: 100%;
+  background: var(--text);
+  height: 1px;
+  opacity: .5;
+  margin: 1em auto;
+}
+
+
+/* TABLET */
+@media only screen and (min-width: 768px) {
+  /* body {} */
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 1024px) {
+
+  /* body {} */
+}

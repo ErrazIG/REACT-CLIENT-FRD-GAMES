@@ -1,0 +1,18 @@
+
+.theme-toggle {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    width: 1.3em;
+    height: 1.3em;
+    display: flex;
+
+    align-self: center;
+    justify-self: center;
+}
