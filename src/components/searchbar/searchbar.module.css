@@ -1,13 +1,41 @@
 
 
-/* TABLET */
-@media only screen and (min-width: 768px) {
-
-    /* .searchbar {} */
+.headerSearch {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--backgroundSecondary);
 }
 
-/* DESKTOP */
-@media only screen and (min-width: 1024px) {
+.headerSearchbar {
+    width: 16em;
+    height: 2.5em;
+    outline: none;
+    border: none;
+    background-color: var(--backgroundSecondary);
+    color: var(--text);
+    padding: 1em;
+    font-family: 'Poppins', sans-serif;
+}
 
-    /* .searchbar {} */
+.headerSearchbar::placeholder {
+    color: var();
+}
+
+.headerSearchBtn {
+    height: 2.5em;
+    width: 2.5em;
+    background: transparent;
+    border: none;
+    background-color: var(--backgroundSecondary);
+}
+
+.headerSearchIcon {
+    width: 2.5em;
+    height: 2.5em;
+    transform: scale(.8);
+    cursor: pointer;
+}
+
+.headerSearchIcon:active {
+    transform: scale(.7);
 }
