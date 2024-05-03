@@ -18,6 +18,8 @@
   --backgroundSecondary: #3b3634;
   --backgroundThird: #141110;
 
+  --border: #ae9d94;
+
   --primary: #ff5f14;
   --secondary: #7e3e20;
   --accent: #d76a37;
@@ -34,9 +36,12 @@
 :root[data-theme="light"] {
   --text: #26201e;
   --iconsColor: invert(1);
-  --backgroundPrimaryLight: #f5f2f0;
-  --backgroundSecondaryLight: #dedad8;
-  --backgroundThirdLight: #c8c2bf;
+  --backgroundPrimary: #f5f2f0;
+  --backgroundSecondary: #dedad8;
+  --backgroundThird: #ae9d94;
+
+  --border: #3b3634;
+
   --primary: #eb4a00; /*ff5f14 */
   --secondary: #df9f81;
   --accent: #c85a28;
@@ -70,13 +75,13 @@ main {
   flex-direction: column;
 }
 .mainContent {
-  background: #ff040400;
   position: relative;
   z-index: 5;
   top: 6em;
   left: 15em;
   width: calc(100dvw - 15em);
-  height: 100%;
+
+  height: calc(100dvh - 6em);
   display: flex;
   flex-direction: column;
 }

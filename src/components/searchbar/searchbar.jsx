@@ -8,7 +8,7 @@ const Searchbar = () => {
                 <button className={style.headerSearchBtn}>
                     <CiSearch className={style.headerSearchIcon} />
                 </button>
-                <input className={style.headerSearchbar} type="text" />
+                <input className={style.headerSearchbar} placeholder="Search" type="text" />
             </form>
         </>
     );

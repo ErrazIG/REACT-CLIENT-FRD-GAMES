@@ -61,7 +61,6 @@ export const routes = [
             },
             {
                 path: 'auth',
-                element: <LoginPage />,
                 children: [
                     {
                         path: 'login',

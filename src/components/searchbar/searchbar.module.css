@@ -34,6 +34,7 @@
     height: 2.5em;
     transform: scale(.8);
     cursor: pointer;
+    color: var(--text);
 }
 
 .headerSearchIcon:active {

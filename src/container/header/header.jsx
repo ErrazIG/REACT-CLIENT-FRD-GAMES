@@ -16,18 +16,20 @@ const Header = () => {
                 <Searchbar />
                 {!!token ? (
                     <>
+                    <div className={style.headerOptions}>
                         <HeaderUser />
                         <ThemeToggle />
+                    </div>
                     </>
                 ) : (
                     <>
-                        <div>
+                        <div className={style.headerOptions}>
                             <Link to='/auth/login'>
-                                <button className="auth-btn">Login</button>
+                                <button className={style.authBtn}>Login</button>
                             </Link>
 
                             <Link to='/auth/register'>
-                                <button className="auth-btn">Register</button>
+                                <button className={style.authBtn}>Register</button>
                             </Link>
                         <ThemeToggle />
                         </div>

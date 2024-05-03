@@ -1,0 +1,44 @@
+
+.loginForm {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-content: center;
+    justify-self: center;
+    margin: 2em;
+    background-color: var(--backgroundThird);
+    padding: 5em 7em;
+}
+
+.tilteForm {
+    text-align: center;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputLabel {
+    margin: .5em 0;
+}
+
+.inputInput {
+    margin: .5em 0;
+    padding: .3em;
+}
+
+.authBtnLogin {
+    width: 6.5em;
+    height: 3em;
+    background-color: var(--backgroundPrimary);
+    color: var(--text);
+    border: none;
+    margin-top: 1em;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+}
+.authBtnLogin:hover {
+    box-shadow: 0px 0px 15px 0px var(--border);
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { FiSun } from "react-icons/fi";
 import style from './theme-toggle.module.css';
 
 const ThemeToggle = () => {
@@ -14,7 +15,7 @@ const ThemeToggle = () => {
 
   return (
     <span className={style["theme-toggle"]} onClick={toggleTheme}>
-      {theme === 'dark' ? <FaSun className={style.icons} /> : <FaMoon className={style.icons} />}
+      {theme === 'dark' ? <FiSun className={style.icons} /> : <FaMoon className={style.icons} />}
     </span>
   );
 };

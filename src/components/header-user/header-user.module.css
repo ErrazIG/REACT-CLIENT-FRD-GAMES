@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 14em;
+    width: 12em;
     padding: .7em 1em;
     margin: 0 1em;
     cursor: pointer;
@@ -22,6 +22,7 @@
 
 .headerUserImg {
     width: 2.5em;
+    height: 2.5em;
     border-radius: 50em;
     border: 2px solid var(--primary);
     border-spacing: 20px;
@@ -31,4 +32,5 @@
 .headerUserLogout {
     width: 1em;
     height: 1em;
+    color: var(--text);
 }
