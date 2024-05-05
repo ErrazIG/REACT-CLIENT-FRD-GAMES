@@ -24,7 +24,7 @@ export const routes = [
                 element: <HomePage />
             },
             {
-                path: 'profile',
+                path: 'profile/:username',
                 element: <ProfilePage />
             },
             {

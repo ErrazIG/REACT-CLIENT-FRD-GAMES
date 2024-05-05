@@ -81,7 +81,7 @@ main {
   left: 15em;
   width: calc(100dvw - 15em);
 
-  height: calc(100dvh - 6em);
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -94,9 +94,8 @@ main {
   height: 3em;
 }
 .line {
-
   width: 100%;
-  background: var(--text);
+  background-color: var(--text);
   height: 1px;
   opacity: .5;
   margin: 1em auto;
@@ -104,8 +103,23 @@ main {
 
 .line-header {
   width: 95%;
-  background: var(--text);
-  height: 1px;
+  background-color: var(--text);
+  height: 1px !important;
   opacity: .5;
   margin: 1.5em auto;
+  z-index: 1000000;
+}
+
+img {
+  user-select: none;
+}
+
+input {
+  height: 2.5em;
+  outline: none;
+  border: none;
+  background-color: var(--backgroundSecondary);
+  color: var(--text);
+  padding: 1em;
+  font-family: 'Poppins', sans-serif;
 }
