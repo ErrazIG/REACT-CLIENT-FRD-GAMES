@@ -11,7 +11,7 @@ import help from "../../assets/links/icons8-online-support-50.png";
 import conditions from "../../assets/links/icons8-about-50.png";
 import confidentiality from "../../assets/links/icons8-ask-question-50.png";
 
-import twitter from "../../assets/links/icons8-twitter-50.png";
+import twitter from "../../assets/links/icons8-twitterx-50.png";
 import youtube from "../../assets/links/icons8-youtube-50.png";
 import discord from "../../assets/links/icons8-discord-50.png";
 
@@ -19,10 +19,11 @@ import style from "./sidebar.module.css";
 import ThemeToggle from "../../components/theme-toggle/theme-toggle";
 import { useRecoilValue } from "recoil";
 import { tokenAtom } from "../../atoms/token.atom.js";
+import { jwtDecode } from "jwt-decode";
 
 const Sidebar = () => {
   const token = useRecoilValue(tokenAtom);
-
+  const decodedToken = token ? jwtDecode(token) : null;
   const logoLinkClasses = `${style.sidebarLogos} ${style.navChildContainer}`;
 
   return (
@@ -37,21 +38,25 @@ const Sidebar = () => {
           <ul className={style.sidebarLinks}>
             {!!token ? (
               <>
-                <Link className={style.sidebarLink} to="/profile">
+                <Link
+                  className={style.sidebarLink}
+                  to={`/profile/${decodedToken.username}`}
+                >
                   <img className={style.sidebarIcon} src={profile} alt="" />
                   <span className={style.sidebarText}>Profile</span>
                 </Link>
-                <Link className={style.sidebarLink} to="/friends">
+                <Link className={style.sidebarLink} to={`/friends/${decodedToken.username}`}>
                   <img className={style.sidebarIcon} src={friends} alt="" />
                   <span className={style.sidebarText}>Friends</span>
                 </Link>
-                <Link className={style.sidebarLink} to="/chat">
+                <Link className={style.sidebarLink} to={`/chat/${decodedToken.username}`}>
                   <img className={style.sidebarIcon} src={messages} alt="" />
                   <span className={style.sidebarText}>Chat</span>
                 </Link>
                 <div className="line"></div>
               </>
-            ) : ( <></>
+            ) : (
+              <></>
             )}
             <Link className={style.sidebarLink} to="/games">
               <img className={style.sidebarIcon} src={games} alt="" />
