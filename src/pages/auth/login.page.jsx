@@ -4,6 +4,7 @@ import { tokenAtom } from "../../atoms/token.atom.js";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import style from "./loginPage.module.css";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [token, setToken] = useRecoilState(tokenAtom);
@@ -21,7 +22,7 @@ const LoginPage = () => {
         baseURL: "http://localhost:8080/api/",
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
       })
@@ -61,6 +62,7 @@ const LoginPage = () => {
         <div>
           <button className={style.authBtnLogin} type="submit">Login</button>
         </div>
+        <span className={style.registerText}>Don't have an account ? <Link className={style.registerBtn} to='/auth/register'>Register</Link></span> 
       </form>
     </>
   );
