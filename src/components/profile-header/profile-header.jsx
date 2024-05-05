@@ -1,33 +1,29 @@
 import axios from "axios";
 import edit from "../../assets/links/icons8-edit-30.png";
-import  imgProfile from "../../assets/OIG1.png"
+import imgProfile from "../../assets/OIG1.png";
 import style from "./profile-header.module.css";
 import { jwtDecode } from "jwt-decode";
 import { useRecoilState } from "recoil";
 import { tokenAtom } from "../../atoms/token.atom.js";
 import { useEffect } from "react";
 import { DataAtom } from "../../atoms/data.atom.js";
+import { useState } from "react";
 
 const ProfileHeader = () => {
   const [token, setToken] = useRecoilState(tokenAtom);
-  const [data, setData] = useRecoilState(DataAtom);
-
+  const [data, setData] = useState({});
   const decodedToken = token ? jwtDecode(token) : null;
 
   //attention au useEffect bien revoir !!!!
   useEffect(() => {
+    
     axios
       .get(`http://localhost:8080/api/member/${decodedToken.username}`)
       .then((response) => {
         console.log("response data : ", response.data);
 
-        setData( {
-          username: response.data.username,
-          email: response.data.email,
-          description: response.data.description,
-        });
+        setData(response.data);
         localStorage.setItem("data", JSON.stringify(data));
-
       })
       .catch((error) => {
         console.error(
@@ -37,29 +33,23 @@ const ProfileHeader = () => {
       });
   }, []);
 
+  
+  console.log("useState DATA : ", { data });
   return (
     <>
-        <h2 className={style.mainContentTitle}>Profile</h2>
-        <div className={style.mainContentUserInfo}>
-          <img
-            className={style.mainContentUserInfoImg}
-            src={imgProfile}
-            alt=""
-          />
-          <div className={style.mainContentUserInfoText}>
-            <h3>{data && (data.username)}</h3>
-            <p>{data && (data.email)}</p>
-            <p>{data && (data.description)}</p>
-          </div>
-          <img
-            className={style.btnEditProfile}
-            src={edit}
-            alt="edit icon"
-          />
+      <h2 className={style.mainContentTitle}>Profile</h2>
+      <div className={style.mainContentUserInfo}>
+        <img className={style.mainContentUserInfoImg} src={imgProfile} alt="" />
+        <div className={style.mainContentUserInfoText}>
+          <h3>{data && data.username}</h3>
+          <p>{data && data.email}</p>
+          <p>{data && data.description}</p>
         </div>
-        <div className="line" />
+        <img className={style.btnEditProfile} src={edit} alt="edit icon" />
+      </div>
+      <div className="line" />
 
-        {/* <div className="leaderboards">
+      {/* <div className="leaderboards">
           <div className="user-friends-leaderboard leaderboard">
             <h3 className="leaderboard-title">Friends Leaderboard</h3>
             <div className="leaderboard-rank-first">
