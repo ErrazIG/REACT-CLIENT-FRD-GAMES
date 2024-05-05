@@ -6,7 +6,6 @@ import { jwtDecode } from "jwt-decode";
 import { useRecoilState } from "recoil";
 import { tokenAtom } from "../../atoms/token.atom.js";
 import { useEffect } from "react";
-import { DataAtom } from "../../atoms/data.atom.js";
 import { useState } from "react";
 
 const ProfileHeader = () => {
@@ -33,7 +32,7 @@ const ProfileHeader = () => {
       });
   }, []);
 
-  
+
   console.log("useState DATA : ", { data });
   return (
     <>
