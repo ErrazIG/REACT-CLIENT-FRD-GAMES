@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 2em 10em;
+    padding: 2em 5em;
 }
 
 .mainContentHeaderImg {
@@ -52,4 +52,13 @@
     max-width: 100%;
     background-color: var(--backgroundThird);
     border-radius: 1em;
+}
+
+.lineHeader {
+    width: 95%;
+    background-color: var(--text);
+    height: 1px !important;
+    opacity: .5;
+    margin: 1.5em auto;
+    z-index: 1000000;
 }

@@ -19,7 +19,7 @@ const HomePage = () => {
                     src={OIG1}
                 />
             </div>
-            <div className="line-header"></div>
+            <div className={style.lineHeader}></div>
             <div className={style.mainContentFeaturedGame}>
                 <h2 className={style.mainContentFeaturedGameTitle}>
                     Featured Game
