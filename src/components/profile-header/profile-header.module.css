@@ -1,0 +1,35 @@
+.mainContentTitle {
+    padding: 0 .5em;
+    font-size: 3em;
+}
+
+.mainContentUserInfo {
+    padding: 2em;
+    display: flex;
+}
+
+.mainContentUserInfoImg {
+    width: 15em;
+    height: 15em;
+    border-radius: 50em;
+    border: 2px solid var(--primary);
+}
+
+.mainContentUserInfoText {
+    width: 100%;
+    margin: 2em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.btnEditProfile {
+    width: 1.7em;
+    height: 1.7em;
+    cursor: pointer;
+}
+
+.btnEditProfile:active {
+    transform: scale(.9);
+}

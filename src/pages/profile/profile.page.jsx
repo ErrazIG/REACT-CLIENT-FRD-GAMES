@@ -1,10 +1,13 @@
+import ProfileHeader from "../../components/profile-header/profile-header.jsx";
+import style from "./profile.module.css";
 
 const ProfilePage = () => {
-
-    return (
-        <>
-        <h1>Profile</h1>
-        </>
-    );
-}
+  return (
+    <>
+      <div className={style.mainContentUserProfile}>
+        <ProfileHeader />
+      </div>
+    </>
+  );
+};
 export default ProfilePage;
