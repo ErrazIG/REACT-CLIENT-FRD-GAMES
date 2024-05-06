@@ -1,0 +1,116 @@
+.leaderboards {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.profileGameLeaderboard,
+.profileFriendLeaderboard {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    margin: .5em;
+}
+
+.leaderboard {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+}
+.leaderboardTitle {
+    align-self: center;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin: .5em 0 2em 0;
+}
+
+.leaderboardRow {
+    display: flex;
+    align-items: center;
+    gap: 0 1em;
+}
+
+.leaderboardRow:nth-child(1)::before {
+    content: url(../../assets/leaderboard/icons8-gold-medal-96.png);
+    transform: scale(.5);
+    margin-right: -2em;
+}
+
+.leaderboardRow:nth-child(2)::before {
+    content: url(../../assets/leaderboard/icons8-silver-medal-96.png);
+    transform: scale(.5);
+    margin-right: -2em;
+}
+
+.leaderboardRow:nth-child(3)::before {
+    content: url(../../assets/leaderboard/icons8-bronze-medal-96.png);
+    transform: scale(.5);
+    margin-right: -2em;
+}
+
+.leaderboardUserImg,
+.leaderboardGameImg {
+    width: 3.4em;
+    margin-right: .5em;
+    border-radius: 50vh;
+    object-fit: cover;
+}
+
+.leaderboardRankImg {
+    width: 3em;
+    border-radius: 50vh;
+}
+.userFriendsLeaderboard
+.leaderboardUsernames {
+    width: 10em;
+}
+
+.userGamesLeaderboard
+.leaderboardUsernames {
+    width: 6em;
+}
+
+.leaderboardUsernames,
+.leaderboardScore {
+    font-size: 1.4em;
+}
+
+.leaderboardScore {
+    margin-left: 1em;
+}
+
+.leaderboardScore::after {
+    content: "Pts";
+    font-size: .5em;
+}
+
+
+.leaderboardRankFirst,
+.leaderboardRankSecond,
+.leaderboardRankThird {
+    display: flex;
+    align-items: center;
+    margin: .5em auto;
+}
+
+.userGamesLeaderboard {
+    display: flex;
+    align-content: flex-start;
+}
+
+.dataName {
+    width: 12em;
+}
+
+.dataScore {
+    width: 5em;
+    margin-left: 1em;
+    font-size: 1.35em;
+
+}
+
+.dataScore::after {
+    content: " Pts";
+    font-size: .65em;
+}
