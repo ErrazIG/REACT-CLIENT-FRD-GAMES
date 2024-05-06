@@ -28,11 +28,11 @@ export const routes = [
                 element: <ProfilePage />
             },
             {
-                path: 'friends',
+                path: 'friends/:username',
                 element: <FriendsPage />
             },
             {
-                path: 'chat',
+                path: 'chat/:username',
                 element: <ChatPage />
             },
             {
@@ -40,7 +40,7 @@ export const routes = [
                 element: <GamesPage />
             },
             {
-                path: 'leaderboard',
+                path: 'leaderboards',
                 element: <LeaderboardsPage />
             },
             {
