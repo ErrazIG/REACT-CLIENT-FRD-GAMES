@@ -4,6 +4,7 @@ import ProfilePage from './pages/profile/profile.page.jsx';
 import FriendsPage from './pages/friends/friends.page.jsx';
 import ChatPage from './pages/chat/chat.page.jsx';
 import GamesPage from './pages/games/games.page.jsx';
+import GamePage from './pages/games/game/game.page.jsx';
 import LeaderboardsPage from './pages/leaderboards/leaderboards.page.jsx';
 import TournamentsPage from './pages/tournaments/tournaments.page.jsx';
 import HelpPage from './pages/help/help.page.jsx';
@@ -37,7 +38,14 @@ export const routes = [
             },
             {
                 path: 'games',
-                element: <GamesPage />
+                element: <GamesPage />,
+                children: [
+                    {
+                        path: 'games/:id',
+                        element: <GamePage />
+                    }
+
+                ]
             },
             {
                 path: 'leaderboards',
