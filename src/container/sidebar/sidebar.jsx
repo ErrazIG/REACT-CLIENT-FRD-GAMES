@@ -23,7 +23,6 @@ import { jwtDecode } from "jwt-decode";
 
 const Sidebar = () => {
   const token = useRecoilValue(tokenAtom);
-  const decodedToken = token ? jwtDecode(token) : null;
   const logoLinkClasses = `${style.sidebarLogos} ${style.navChildContainer}`;
 
   return (
@@ -40,16 +39,16 @@ const Sidebar = () => {
               <>
                 <Link
                   className={style.sidebarLink}
-                  to={`/profile/${decodedToken.username}`}
+                  to={`/profile/${token.username}`}
                 >
                   <img className={style.sidebarIcon} src={profile} alt="" />
                   <span className={style.sidebarText}>Profile</span>
                 </Link>
-                <Link className={style.sidebarLink} to={`/friends/${decodedToken.username}`}>
+                <Link className={style.sidebarLink} to={`/friends/${token.username}`}>
                   <img className={style.sidebarIcon} src={friends} alt="" />
                   <span className={style.sidebarText}>Friends</span>
                 </Link>
-                <Link className={style.sidebarLink} to={`/chat/${decodedToken.username}`}>
+                <Link className={style.sidebarLink} to={`/chat/${token.username}`}>
                   <img className={style.sidebarIcon} src={messages} alt="" />
                   <span className={style.sidebarText}>Chat</span>
                 </Link>
