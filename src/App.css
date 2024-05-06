@@ -124,3 +124,7 @@ input {
   padding: 1em;
   font-family: 'Poppins', sans-serif;
 }
+.gameLink {
+  color: var(--text);
+  text-decoration: none;
+}

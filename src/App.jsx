@@ -5,14 +5,18 @@ import Sidebar from './container/sidebar/sidebar'
 import { useEffect } from 'react'
 import { useRecoilState } from 'recoil';
 import { tokenAtom } from './atoms/token.atom.js'
+import { jwtDecode } from 'jwt-decode'
 
 function App() {
 
   const [token, setToken] = useRecoilState(tokenAtom);
 
   useEffect(() => { 
-    setToken(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
+    const decodeToken = token ? jwtDecode(token) : null;
+    setToken(decodeToken);
   }, [])
+
 
 
 
