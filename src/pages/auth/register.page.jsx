@@ -80,7 +80,7 @@ const RegisterPage = () => {
             </label>
             <input
               className={style.inputInput}
-              type="text"
+              type="email"
               id="confirmEmail"
               name="confirmEmail"
               value={confirmEmail}
@@ -95,7 +95,7 @@ const RegisterPage = () => {
             </label>
             <input
               className={style.inputInput}
-              type="text"
+              type="password"
               id="password"
               name="password"
               value={password}
@@ -108,7 +108,7 @@ const RegisterPage = () => {
             </label>
             <input
               className={style.inputInput}
-              type="text"
+              type="password"
               id="confirmPassword"
               name="confirmPassword"
               value={confirmPassword}

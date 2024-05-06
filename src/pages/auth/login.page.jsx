@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import style from "./loginPage.module.css";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const LoginPage = () => {
   const [token, setToken] = useRecoilState(tokenAtom);
@@ -23,7 +24,9 @@ const LoginPage = () => {
       })
       .then((response) => {
         // console.log(response.data);
-        setToken(response.data.token);
+        const decodeToken = jwtDecode(response.data.token);
+        setToken(decodeToken);
+
         localStorage.setItem("token", response.data.token);
       })
       .catch((error) => {
@@ -52,7 +55,7 @@ const LoginPage = () => {
         <div className={style.inputContainer}>
           <label className={style.inputLabel} htmlFor="password">Password:</label>
           <input className={style.inputInput}
-            type="text"
+            type="password"
             id="password"
             name="password"
             value={password}
