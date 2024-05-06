@@ -38,14 +38,11 @@ export const routes = [
             },
             {
                 path: 'games',
-                element: <GamesPage />,
-                children: [
-                    {
-                        path: 'games/:id',
-                        element: <GamePage />
-                    }
-
-                ]
+                element: <GamesPage />
+            },
+            {
+                path: 'games/:id',
+                element: <GamePage />
             },
             {
                 path: 'leaderboards',

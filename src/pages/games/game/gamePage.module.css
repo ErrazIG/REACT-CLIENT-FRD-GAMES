@@ -1,0 +1,26 @@
+.mainContentGamePage {
+  width: calc(100% - 2em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  padding: 2em;
+  gap: 4em;
+}
+
+.gameWindow {
+  width: 1180px;
+  height: 620px;
+  background: #000;
+}
+
+.rulesGames {
+  display: flex;
+  background-color: var(--backgroundTextSelection);
+  color: var(--backgroundThird);
+}
+
+.ruleContent {
+  width: 30em;
+  padding: .6em;
+}
