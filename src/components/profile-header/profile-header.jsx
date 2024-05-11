@@ -1,8 +1,6 @@
 import axios from "axios";
 import edit from "../../assets/links/icons8-edit-30.png";
-import imgProfile from "../../assets/OIG1.png";
 import style from "./profile-header.module.css";
-import { jwtDecode } from "jwt-decode";
 import { useRecoilState } from "recoil";
 import { tokenAtom } from "../../atoms/token.atom.js";
 import { useEffect } from "react";
@@ -33,8 +31,13 @@ const ProfileHeader = () => {
     }
   }, [token]);
 
+  const handleToggleEdit = () => {
+    
+  }
 
-  console.log("useState DATA : ", { data });
+  const imgProfile = "http://localhost:8080" + data.img;
+  console.log(imgProfile);
+  //TODO SI LE TEMPS FAIRE UNE TERNAIRE QUI AFFICHE LE FORMULAIRE EDIT CREER UN COMPONENT , QUAND ON CLIQUE SUR LE BOUTON EDIT ET CHANGER AVEC UNE CROIX
   return (
     <>
       <h2 className={style.mainContentTitle}>Profile</h2>
@@ -45,7 +48,7 @@ const ProfileHeader = () => {
           <p>{data && data.email}</p>
           <p>{data && data.description}</p>
         </div>
-        <img className={style.btnEditProfile} src={edit} alt="edit icon" />
+        <img className={style.btnEditProfile} src={edit} alt="edit icon" onClick={handleToggleEdit} />
       </div>
     </>
   );
