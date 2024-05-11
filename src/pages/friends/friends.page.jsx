@@ -3,6 +3,7 @@ const FriendsPage = () => {
         <>
             <div>
                 <h1>FriendsPage</h1>
+                
             </div>
         </>
     )
