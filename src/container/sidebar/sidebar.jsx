@@ -16,10 +16,8 @@ import youtube from "../../assets/links/icons8-youtube-50.png";
 import discord from "../../assets/links/icons8-discord-50.png";
 
 import style from "./sidebar.module.css";
-import ThemeToggle from "../../components/theme-toggle/theme-toggle";
 import { useRecoilValue } from "recoil";
 import { tokenAtom } from "../../atoms/token.atom.js";
-import { jwtDecode } from "jwt-decode";
 
 const Sidebar = () => {
   const token = useRecoilValue(tokenAtom);
