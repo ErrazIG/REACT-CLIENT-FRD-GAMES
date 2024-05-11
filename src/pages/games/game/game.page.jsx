@@ -2,18 +2,42 @@ import { useEffect } from "react";
 import style from "./gamePage.module.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const GamePage = () => {
+
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(false);
+
     const { id } = useParams();
+    
     console.log("l'id de l'url: ", id);
     useEffect(()=> {
+        setLoading(true);
         axios.get(`http://localhost:8080/api/games/${id}`)
-    })
+            .then(response => {
+                    setLoading(false);
+                    setData(response.data);
+            })
+    
+    }, [id])
+
+    if (loading) {
+        return (
+            <p>Loading...</p>
+        )
+    } 
+    
+    if (!data) {
+        return (
+            <p>aucune data...</p>
+        )
+    }
 
     return (
         <>
         <div className={style.mainContentGamePage}>
-            <h2>Titre du jeu</h2>
+            <h2>{data.name}</h2>
             <div className={style.gameWindow}>
                 
             </div>
